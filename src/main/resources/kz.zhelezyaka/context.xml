@@ -3,7 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="messageRenderer" class="kz.zhelezyaka.spring.MessageRenderer">
-        <constructor-arg name="text" value="I love Spring!"/>
+    <!--<bean id="messageRenderer" class="kz.zhelezyaka.spring.MessageRenderer">-->
+    <!--<constructor-arg name="text" value="I love Spring!"/>-->
+    <!--</bean>-->
+    <bean id="renderer" class="kz.zhelezyaka.spring.MessageRendererErrorImpl">
+        <constructor-arg name="message" ref="message"/>
+    </bean>
+    <bean id="message" class="kz.zhelezyaka.spring.HelloMessage">
+        <constructor-arg name="text" value="Vladimir!"/>
     </bean>
 </beans>
