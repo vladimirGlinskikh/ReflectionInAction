@@ -6,10 +6,13 @@
     <!--<bean id="messageRenderer" class="kz.zhelezyaka.spring.MessageRenderer">-->
     <!--<constructor-arg name="text" value="I love Spring!"/>-->
     <!--</bean>-->
-    <bean id="renderer" class="kz.zhelezyaka.spring.MessageRendererErrorImpl">
+    <bean id="independentRenderer" class="kz.zhelezyaka.spring.IndependentMessageRenderer">
+        <constructor-arg name="renderer" ref="renderer"/>
+    </bean>
+    <bean id="renderer" class="kz.zhelezyaka.spring.MessageRendererStandartImpl">
         <constructor-arg name="message" ref="message"/>
     </bean>
     <bean id="message" class="kz.zhelezyaka.spring.HelloMessage">
-        <constructor-arg name="text" value="Vladimir!"/>
+        <constructor-arg name="text" value="Spring!"/>
     </bean>
 </beans>
