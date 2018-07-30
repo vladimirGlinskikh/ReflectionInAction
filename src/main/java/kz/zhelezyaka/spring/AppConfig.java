@@ -14,6 +14,6 @@ public class AppConfig {
 
     @Bean
     public Message message() {
-        return new HelloMessage("Hello!");
+        return new HelloMessage("This is Configuration!");
     }
 }
