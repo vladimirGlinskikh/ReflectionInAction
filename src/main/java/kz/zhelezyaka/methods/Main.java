@@ -2,12 +2,13 @@ package kz.zhelezyaka.methods;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) throws NoSuchMethodException {
         Class<String> stringClass = String.class;
         Method[] methods = stringClass.getMethods();
-        System.out.println(methods);
+        System.out.println(Arrays.toString(methods));
 
         Method methodIndexOf = stringClass.getMethod("indexOf", String.class);
         System.out.println(methodIndexOf);
@@ -29,7 +30,7 @@ public class Main {
             }
 
             Class<?>[] parameterTypes = method.getParameterTypes();
-            System.out.println(parameterTypes + " parameters:");
+            System.out.println(Arrays.toString(parameterTypes) + " parameters:");
 
             for (Class<?> parameterType : parameterTypes) {
                 System.out.println("parameter type name: " + parameterType.getName());
